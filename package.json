@@ -20,7 +20,26 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "style-lint": "stylelint --config=.stylelintrc.json \"src/**/*.scss\" --formatter verbose",
+    "lint": "eslint --max-warnings=0 --fix --ext .ts,.tsx .",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "predeploy": "npm run build",
     "eject": "react-scripts eject"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": "prettier --write",
+    "src/**/*.{js,jsx,ts,tsx}": "eslint --fix --max-warnings 0",
+    "src/**/*.{css,scss}": "stylelint --fix"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/index.tsx",
+      "!src/reportWebVitals.ts",
+      "!src/serviceWorker.ts",
+      "!src/serviceWorkerRegistration.ts"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +58,28 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/user-event": "^13.5.0",
+    "@tsconfig/create-react-app": "^1.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jest": "^26.1.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.3",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-testing-library": "^5.0.6",
+    "gh-pages": "^3.2.3",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "postcss": "^8.4.8",
+    "prettier": "^2.5.1",
+    "sass": "^1.49.9",
+    "stylelint": "^14.5.3",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "typescript": "^4.6.2"
   }
 }
