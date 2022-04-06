@@ -1,0 +1,15 @@
+@import "../styles/index";
+
+.layout {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 90px 1fr;
+
+  &__navigation {
+    grid-area: 1 / 1 / 4 / 1;
+  }
+
+  &__content {
+    grid-area: 1 / 2 / 4 / 2;
+  }
+}
