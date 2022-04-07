@@ -1,0 +1,40 @@
+@import "../../../styles/index";
+
+.navigation-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+
+  &__button {
+    cursor: pointer;
+  }
+
+  &__item {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    &--active {
+      background-color: $color-gray-600;
+    }
+  }
+
+  &__svg {
+    height: 20px;
+    width: 20px;
+    fill: $color-gray-100;
+
+    &:hover {
+      transition: 0.25s ease-out;
+    }
+
+    &--dark {
+      fill: $color-white;
+    }
+  }
+}

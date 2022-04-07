@@ -1,0 +1,26 @@
+@import "../../../styles/index";
+
+.options {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  &__item {
+    display: flex;
+  }
+
+  &__mail {
+    cursor: pointer;
+    fill: $color-gray-100;
+
+    &:hover {
+      transition: 0.25s ease-out;
+      fill: green;
+    }
+
+    &--dark {
+      fill: $color-white;
+    }
+  }
+}
